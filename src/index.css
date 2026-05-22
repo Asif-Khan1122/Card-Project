@@ -19,31 +19,46 @@ body {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card {
-  height: 320px;
-  width: 260px;
+  height: auto;
+  width: 100%;
+  max-width: 270px;
+  gap: 16px;
   background: #fff;
   border-radius: 30px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(99, 102, 241, 0.35);
 }
 
 .card .top {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
   justify-content: space-between;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  padding: 8px 11px;
+  border-radius: 27px 27px 0 0;
 }
 
 .top img {
   height: 40px;
-  width: 40px;
+  width: 100%;
+  max-width: 40px;
+  object-fit: contain;
+  background-color: white;
   border-radius: 50%;
   border: 1px solid #dadada;
   padding: 2px;
@@ -52,47 +67,52 @@ body {
 .top button {
   display: flex;
   align-items: center;
-  border: 1px solid #dadada;
+  border: 1px solid #f1e9e9;
   padding: 4px 6px;
   font-size: 11px;
   border-radius: 5px;
   gap: 3px;
   background: transparent;
-  color: #b1b1b1;
+  color: #fbf9f9;
+  cursor: pointer;
 }
 
 .center {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+  gap: 20px;
 }
 
 .center h3 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
 }
 
 .center h3 span {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 400;
   color: #8b8b8b;
 }
 .center h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
+  line-height: 28px;
 }
 
-.center .tag {
+.tag {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  gap: 5px;
+  gap: 12px;
 }
 
-.center .tag h4 {
-  font-size: 10px;
+.center .tag span {
+  font-size: 12px;
   background: #dadada;
   color: #000;
-  padding: 4px 8px;
+  padding: 8px 12px;
   font-weight: 500;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .bottom {
@@ -100,16 +120,19 @@ body {
   align-items: center;
   justify-content: space-between;
   border-top: 1.5px solid #d7d7d7;
-  padding-top: 15px;
+  padding: 18px;
+  gap: 35px;
 }
 
 .bottom button {
   background: #000;
   color: #fff;
-  padding: 5px 10px;
+  padding: 8px 10px;
   border: none;
   border-radius: 5px;
   font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 .bottom h3 {

@@ -1,8 +1,6 @@
 import { FaRegBookmark } from "react-icons/fa";
-import "../index.css";
 
 const Card = (props) => {
-  console.log(props);
   return (
     <div className='card'>
       <div className='top'>
@@ -17,14 +15,14 @@ const Card = (props) => {
         </h3>
         <h2>{props.post}</h2>
         <div className='tag'>
-          <h4>{props.tag1}</h4>
-          <h4>{props.tag2}</h4>
+          <span>{props.tag1}</span>
+          <span>{props.tag2}</span>
         </div>
       </div>
       <div className='bottom'>
         <div>
-          <h3>${props.pay}/hr</h3>
-          <p>{props.location}</p>
+          <h3>${props.pay ?? "N/A"}/hr</h3>
+          <p>{props.location ?? "Remote"}</p>
         </div>
         <button>Apply Now</button>
       </div>

@@ -3,8 +3,7 @@ import Card from "./components/Card";
 function App() {
   const jobData = [
     {
-      brandLogo:
-        "https://1000logos.net/wp-content/uploads/2019/06/Apple-Logo.jpg",
+      brandLogo: "https://cdn.tickerlogos.com/apple.com",
       company: "Apple",
       datePosted: "2 days ago",
       post: "Lead iOS Developer",
@@ -15,7 +14,7 @@ function App() {
     },
     {
       brandLogo:
-        "https://1000logos.net/wp-content/uploads/2019/06/Google-Logo.jpg",
+        "https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B",
       company: "Google",
       datePosted: "5 days ago",
       post: "Frontend Engineer",
@@ -26,7 +25,7 @@ function App() {
     },
     {
       brandLogo:
-        "https://1000logos.net/wp-content/uploads/2019/06/Microsoft-Logo.jpg",
+        "https://cdn.brandfetch.io/idsWBrtc_i/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B",
       company: "Microsoft",
       datePosted: "1 week ago",
       post: "Software Engineer",
@@ -36,8 +35,7 @@ function App() {
       location: "Seattle, USA",
     },
     {
-      brandLogo:
-        "https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo-tumb.png",
+      brandLogo: "https://cdn.tickerlogos.com/amazon.com",
       company: "Amazon",
       datePosted: "3 days ago",
       post: "Backend Developer",
@@ -47,8 +45,7 @@ function App() {
       location: "Bangalore, India",
     },
     {
-      brandLogo:
-        "https://1000logos.net/wp-content/uploads/2019/06/Netflix-Logo.jpg",
+      brandLogo: "https://cdn.tickerlogos.com/netflix.com",
       company: "Netflix",
       datePosted: "2 weeks ago",
       post: "UI/UX Designer",
@@ -70,7 +67,7 @@ function App() {
     },
     {
       brandLogo:
-        "https://1000logos.net/wp-content/uploads/2020/08/Infosys-Logo-tumb.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg",
       company: "Infosys",
       datePosted: "1 day ago",
       post: "Full Stack Developer",
@@ -81,7 +78,7 @@ function App() {
     },
     {
       brandLogo:
-        "https://1000logos.net/wp-content/uploads/2019/06/Adobe-Log.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_Logo.png",
       company: "Adobe",
       datePosted: "5 days ago",
       post: "Creative Designer",
@@ -90,68 +87,23 @@ function App() {
       pay: 120,
       location: "Noida, India",
     },
-    {
-      brandLogo:
-        "https://1000logos.net/wp-content/uploads/2020/08/Uber-Eats-logo-tumb.jpg",
-      company: "Uber",
-      datePosted: "3 weeks ago",
-      post: "Mobile Developer",
-      tag1: "Full Time",
-      tag2: "Senior Level",
-      pay: 175,
-      location: "Hyderabad, India",
-    },
-    {
-      brandLogo:
-        "https://1000logos.net/wp-content/uploads/2021/02/Flipkart-logo-tumb.jpg",
-      company: "Flipkart",
-      datePosted: "6 days ago",
-      post: "Product Manager",
-      tag1: "Full Time",
-      tag2: "Senior Level",
-      pay: 150,
-      location: "Gurgaon, India",
-    },
-    {
-      brandLogo:
-        "https://1000logos.net/wp-content/uploads/2021/02/Flipkart-logo-tumb.jpg",
-      company: "Flipkart",
-      datePosted: "6 days ago",
-      post: "Product Manager",
-      tag1: "Full Time",
-      tag2: "Senior Level",
-      pay: 150,
-      location: "Gurgaon, India",
-    },
-    {
-      brandLogo:
-        "https://1000logos.net/wp-content/uploads/2021/02/Flipkart-logo-tumb.jpg",
-      company: "Flipkart",
-      datePosted: "6 days ago",
-      post: "Product Manager",
-      tag1: "Full Time",
-      tag2: "Senior Level",
-      pay: 150,
-      location: "Gurgaon, India",
-    },
   ];
 
   return (
     <div className='parent'>
       {jobData.map(function (elum, idx) {
         return (
-          <div key={idx}>
-            <Card
-              company={elum.company}
-              post={elum.post}
-              tag1={elum.tag1}
-              tag2={elum.tag2}
-              brandLogo={elum.brandLogo}
-              pay={elum.pay}
-              location={elum.location}
-              datePosted={elum.datePosted}
-            />
-          </div>
+          <Card
+            key={`${elum.company}-${elum.post}`}
+            company={elum.company}
+            post={elum.post}
+            tag1={elum.tag1}
+            tag2={elum.tag2}
+            brandLogo={elum.brandLogo}
+            pay={elum.pay}
+            location={elum.location}
+            datePosted={elum.datePosted}
+          />
         );
       })}
     </div>
